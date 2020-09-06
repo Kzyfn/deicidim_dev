@@ -9,7 +9,7 @@ gem "decidim", "0.21.0"
 # gem "decidim-initiatives", "0.21.0"
 
 gem "bootsnap", "~> 1.3"
-
+gem "nokogiri", "1.10.9"
 gem "puma", "~> 4.3.3"
 gem "uglifier", "~> 4.1"
 
