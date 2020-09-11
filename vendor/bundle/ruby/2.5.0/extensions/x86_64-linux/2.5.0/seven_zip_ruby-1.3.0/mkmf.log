@@ -1,0 +1,258 @@
+have_header: checking for ruby/thread.h... -------------------- yes
+
+"gcc -o conftest -I/opt/rubies/ruby-2.5.8/include/ruby-2.5.0/x86_64-linux -I/opt/rubies/ruby-2.5.8/include/ruby-2.5.0/ruby/backward -I/opt/rubies/ruby-2.5.8/include/ruby-2.5.0 -I. -I/opt/rubies/ruby-2.5.8/include    -O3 -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wno-tautological-compare -Wno-parentheses-equality -Wno-constant-logical-operand -Wno-self-assign -Wunused-variable -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat -Wsuggest-attribute=noreturn -Wsuggest-attribute=format  -fPIC conftest.c  -L. -L/opt/rubies/ruby-2.5.8/lib -Wl,-rpath,/opt/rubies/ruby-2.5.8/lib -L. -L/opt/rubies/ruby-2.5.8/lib  -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-rpath,/opt/rubies/ruby-2.5.8/lib -L/opt/rubies/ruby-2.5.8/lib -lruby  -lpthread -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+
+"gcc -E -I/opt/rubies/ruby-2.5.8/include/ruby-2.5.0/x86_64-linux -I/opt/rubies/ruby-2.5.8/include/ruby-2.5.0/ruby/backward -I/opt/rubies/ruby-2.5.8/include/ruby-2.5.0 -I. -I/opt/rubies/ruby-2.5.8/include    -O3 -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wno-tautological-compare -Wno-parentheses-equality -Wno-constant-logical-operand -Wno-self-assign -Wunused-variable -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat -Wsuggest-attribute=noreturn -Wsuggest-attribute=format  -fPIC  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ruby/thread.h>
+/* end */
+
+--------------------
+
+"gcc -I/opt/rubies/ruby-2.5.8/include/ruby-2.5.0/x86_64-linux -I/opt/rubies/ruby-2.5.8/include/ruby-2.5.0/ruby/backward -I/opt/rubies/ruby-2.5.8/include/ruby-2.5.0 -I. -I/opt/rubies/ruby-2.5.8/include    -O3 -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wno-tautological-compare -Wno-parentheses-equality -Wno-constant-logical-operand -Wno-self-assign -Wunused-variable -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat -Wsuggest-attribute=noreturn -Wsuggest-attribute=format  -fPIC   -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ruby.h>
+ 4: #include <ruby/thread.h>
+ 5: 
+ 6: #include <stdio.h>
+ 7: 
+ 8: int main(int argc, char *argv[])
+ 9: {
+10:     printf("%p\n", rb_thread_call_without_gvl);
+11:     return 0;
+12: }
+/* end */
+
+"gcc -I/opt/rubies/ruby-2.5.8/include/ruby-2.5.0/x86_64-linux -I/opt/rubies/ruby-2.5.8/include/ruby-2.5.0/ruby/backward -I/opt/rubies/ruby-2.5.8/include/ruby-2.5.0 -I. -I/opt/rubies/ruby-2.5.8/include    -O3 -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wno-tautological-compare -Wno-parentheses-equality -Wno-constant-logical-operand -Wno-self-assign -Wunused-variable -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat -Wsuggest-attribute=noreturn -Wsuggest-attribute=format  -fPIC   -c conftest.c"
+conftest.c: In function ‘main’:
+conftest.c:6:20: error: ‘nullptr’ undeclared (first use in this function)
+     printf("%p\n", nullptr);
+                    ^
+conftest.c:6:20: note: each undeclared identifier is reported only once for each function it appears in
+conftest.c: At top level:
+cc1: warning: unrecognized command line option "-Wno-self-assign" [enabled by default]
+cc1: warning: unrecognized command line option "-Wno-constant-logical-operand" [enabled by default]
+cc1: warning: unrecognized command line option "-Wno-parentheses-equality" [enabled by default]
+cc1: warning: unrecognized command line option "-Wno-tautological-compare" [enabled by default]
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <stdio.h>
+4: int main(int argc, char *argv[])
+5: {
+6:     printf("%p\n", nullptr);
+7:     return 0;
+8: }
+/* end */
+
+"gcc -I/opt/rubies/ruby-2.5.8/include/ruby-2.5.0/x86_64-linux -I/opt/rubies/ruby-2.5.8/include/ruby-2.5.0/ruby/backward -I/opt/rubies/ruby-2.5.8/include/ruby-2.5.0 -I. -I/opt/rubies/ruby-2.5.8/include    -O3 -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wno-tautological-compare -Wno-parentheses-equality -Wno-constant-logical-operand -Wno-self-assign -Wunused-variable -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat -Wsuggest-attribute=noreturn -Wsuggest-attribute=format  -fPIC   -x c++  -c conftest.c"
+cc1plus: warning: command line option ‘-Wimplicit-int’ is valid for C/ObjC but not for C++ [enabled by default]
+cc1plus: warning: command line option ‘-Wdeclaration-after-statement’ is valid for C/ObjC but not for C++ [enabled by default]
+cc1plus: warning: command line option ‘-Wimplicit-function-declaration’ is valid for C/ObjC but not for C++ [enabled by default]
+In file included from /usr/include/c++/4.8.5/array:35:0,
+                 from conftest.c:5:
+/usr/include/c++/4.8.5/bits/c++0x_warning.h:32:2: error: #error This file requires compiler and library support for the ISO C++ 2011 standard. This support is currently experimental, and must be enabled with the -std=c++11 or -std=gnu++11 compiler options.
+ #error This file requires compiler and library support for the \
+  ^
+conftest.c: In function ‘void test()’:
+conftest.c:19:5: error: ‘array’ is not a member of ‘std’
+     std::array<int, size> var_list;
+     ^
+conftest.c:19:16: error: expected primary-expression before ‘int’
+     std::array<int, size> var_list;
+                ^
+conftest.c:19:16: error: expected ‘;’ before ‘int’
+conftest.c:21:5: error: ‘function’ is not a member of ‘std’
+     std::function<int (int, int)> convert = [&](int arg1, int arg2){
+     ^
+conftest.c:21:32: error: expression list treated as compound expression in functional cast [-fpermissive]
+     std::function<int (int, int)> convert = [&](int arg1, int arg2){
+                                ^
+conftest.c:21:19: error: expected primary-expression before ‘int’
+     std::function<int (int, int)> convert = [&](int arg1, int arg2){
+                   ^
+conftest.c:21:19: error: expected ‘;’ before ‘int’
+conftest.c:27:41: error: ‘var_list’ was not declared in this scope
+     std::transform(array, array + size, var_list.begin(), [&](int arg){
+                                         ^
+conftest.c: In lambda function:
+conftest.c:28:34: error: ‘convert’ was not declared in this scope
+         return convert(arg, value);
+                                  ^
+conftest.c: In function ‘void test()’:
+conftest.c:29:5: warning: lambda expressions only available with -std=c++11 or -std=gnu++11 [enabled by default]
+     });
+     ^
+conftest.c:31:97: warning: lambda expressions only available with -std=c++11 or -std=gnu++11 [enabled by default]
+     std::for_each(var_list.begin(), var_list.end(), [](int num){ std::cout << num << std::endl; });
+                                                                                                 ^
+At global scope:
+cc1plus: warning: unrecognized command line option "-Wno-self-assign" [enabled by default]
+cc1plus: warning: unrecognized command line option "-Wno-constant-logical-operand" [enabled by default]
+cc1plus: warning: unrecognized command line option "-Wno-parentheses-equality" [enabled by default]
+cc1plus: warning: unrecognized command line option "-Wno-tautological-compare" [enabled by default]
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <functional>
+ 4: #include <algorithm>
+ 5: #include <array>
+ 6: #include <iostream>
+ 7: 
+ 8: #include <ruby.h>
+ 9: 
+10: // see the test on memset_s below, which is a purely BSD thing
+11: #if defined(__APPLE__) || defined(BSD)
+12: #include <string.h>
+13: #endif
+14: 
+15: void test()
+16: {
+17:     int array[] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+18:     const int size = sizeof(array)/sizeof(array[0]);
+19:     std::array<int, size> var_list;
+20: 
+21:     std::function<int (int, int)> convert = [&](int arg1, int arg2){
+22:         return arg1 * arg2;
+23:     };
+24: 
+25:     const int value = 10;
+26: 
+27:     std::transform(array, array + size, var_list.begin(), [&](int arg){
+28:         return convert(arg, value);
+29:     });
+30: 
+31:     std::for_each(var_list.begin(), var_list.end(), [](int num){ std::cout << num << std::endl; });
+32: 
+33: #if defined(__APPLE__) || defined(BSD)
+34:     char str[] = "imareallycoolstringright";
+35:     memset_s(str, sizeof str, 'b', 5);
+36: #endif
+37: }
+/* end */
+
+"gcc -I/opt/rubies/ruby-2.5.8/include/ruby-2.5.0/x86_64-linux -I/opt/rubies/ruby-2.5.8/include/ruby-2.5.0/ruby/backward -I/opt/rubies/ruby-2.5.8/include/ruby-2.5.0 -I. -I/opt/rubies/ruby-2.5.8/include    -O3 -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wno-tautological-compare -Wno-parentheses-equality -Wno-constant-logical-operand -Wno-self-assign -Wunused-variable -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat -Wsuggest-attribute=noreturn -Wsuggest-attribute=format  -fPIC    -c conftest.c"
+conftest.c:3:22: fatal error: functional: No such file or directory
+ #include <functional>
+                      ^
+compilation terminated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <functional>
+ 4: #include <algorithm>
+ 5: #include <array>
+ 6: #include <iostream>
+ 7: 
+ 8: #include <ruby.h>
+ 9: 
+10: // see the test on memset_s below, which is a purely BSD thing
+11: #if defined(__APPLE__) || defined(BSD)
+12: #include <string.h>
+13: #endif
+14: 
+15: void test()
+16: {
+17:     int array[] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+18:     const int size = sizeof(array)/sizeof(array[0]);
+19:     std::array<int, size> var_list;
+20: 
+21:     std::function<int (int, int)> convert = [&](int arg1, int arg2){
+22:         return arg1 * arg2;
+23:     };
+24: 
+25:     const int value = 10;
+26: 
+27:     std::transform(array, array + size, var_list.begin(), [&](int arg){
+28:         return convert(arg, value);
+29:     });
+30: 
+31:     std::for_each(var_list.begin(), var_list.end(), [](int num){ std::cout << num << std::endl; });
+32: 
+33: #if defined(__APPLE__) || defined(BSD)
+34:     char str[] = "imareallycoolstringright";
+35:     memset_s(str, sizeof str, 'b', 5);
+36: #endif
+37: }
+/* end */
+
+"gcc -I/opt/rubies/ruby-2.5.8/include/ruby-2.5.0/x86_64-linux -I/opt/rubies/ruby-2.5.8/include/ruby-2.5.0/ruby/backward -I/opt/rubies/ruby-2.5.8/include/ruby-2.5.0 -I. -I/opt/rubies/ruby-2.5.8/include    -O3 -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wno-tautological-compare -Wno-parentheses-equality -Wno-constant-logical-operand -Wno-self-assign -Wunused-variable -Wimplicit-int -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat -Wsuggest-attribute=noreturn -Wsuggest-attribute=format  -fPIC  -std=gnu++11 -x c++  -c conftest.c"
+cc1plus: warning: command line option ‘-Wimplicit-int’ is valid for C/ObjC but not for C++ [enabled by default]
+cc1plus: warning: command line option ‘-Wdeclaration-after-statement’ is valid for C/ObjC but not for C++ [enabled by default]
+cc1plus: warning: command line option ‘-Wimplicit-function-declaration’ is valid for C/ObjC but not for C++ [enabled by default]
+In file included from /opt/rubies/ruby-2.5.8/include/ruby-2.5.0/ruby/ruby.h:29:0,
+                 from /opt/rubies/ruby-2.5.8/include/ruby-2.5.0/ruby.h:33,
+                 from conftest.c:1:
+/opt/rubies/ruby-2.5.8/include/ruby-2.5.0/ruby/defines.h:286:44: warning: invalid suffix on literal; C++11 requires a space between literal and identifier [-Wliteral-suffix]
+ #   define EXTERN __pragma(message(__FILE__"("STRINGIZE(__LINE__)"): warning: "\
+                                            ^
+In file included from /opt/rubies/ruby-2.5.8/include/ruby-2.5.0/ruby/intern.h:24:0,
+                 from /opt/rubies/ruby-2.5.8/include/ruby-2.5.0/ruby/ruby.h:2040,
+                 from /opt/rubies/ruby-2.5.8/include/ruby-2.5.0/ruby.h:33,
+                 from conftest.c:1:
+/opt/rubies/ruby-2.5.8/include/ruby-2.5.0/ruby/defines.h:286:44: warning: invalid suffix on literal; C++11 requires a space between literal and identifier [-Wliteral-suffix]
+ #   define EXTERN __pragma(message(__FILE__"("STRINGIZE(__LINE__)"): warning: "\
+                                            ^
+cc1plus: warning: unrecognized command line option "-Wno-self-assign" [enabled by default]
+cc1plus: warning: unrecognized command line option "-Wno-constant-logical-operand" [enabled by default]
+cc1plus: warning: unrecognized command line option "-Wno-parentheses-equality" [enabled by default]
+cc1plus: warning: unrecognized command line option "-Wno-tautological-compare" [enabled by default]
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <functional>
+ 4: #include <algorithm>
+ 5: #include <array>
+ 6: #include <iostream>
+ 7: 
+ 8: #include <ruby.h>
+ 9: 
+10: // see the test on memset_s below, which is a purely BSD thing
+11: #if defined(__APPLE__) || defined(BSD)
+12: #include <string.h>
+13: #endif
+14: 
+15: void test()
+16: {
+17:     int array[] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+18:     const int size = sizeof(array)/sizeof(array[0]);
+19:     std::array<int, size> var_list;
+20: 
+21:     std::function<int (int, int)> convert = [&](int arg1, int arg2){
+22:         return arg1 * arg2;
+23:     };
+24: 
+25:     const int value = 10;
+26: 
+27:     std::transform(array, array + size, var_list.begin(), [&](int arg){
+28:         return convert(arg, value);
+29:     });
+30: 
+31:     std::for_each(var_list.begin(), var_list.end(), [](int num){ std::cout << num << std::endl; });
+32: 
+33: #if defined(__APPLE__) || defined(BSD)
+34:     char str[] = "imareallycoolstringright";
+35:     memset_s(str, sizeof str, 'b', 5);
+36: #endif
+37: }
+/* end */
+

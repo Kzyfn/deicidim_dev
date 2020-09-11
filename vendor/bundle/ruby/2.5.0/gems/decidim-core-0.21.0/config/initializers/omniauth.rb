@@ -46,5 +46,13 @@ Rails.application.config.middleware.use OmniAuth::Builder do
         setup: setup_provider_proc(:google_oauth2, client_id: :client_id, client_secret: :client_secret)
       )
     end
+
+    if omniauth_config[:google_oauth2].present?
+      provider(
+        :line,
+        setup: setup_provider_proc(:line, client_id: :channel_id, client_secret: :channel_secret)
+      )
+    end
+
   end
 end
